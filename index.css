@@ -1,6 +1,24 @@
-#heading{
-    color: red;
+.header{
+    display: flex;
+    justify-content: space-between;
 }
-#para{
-    color: brown;
+.logo{
+    width: 120px;
+}
+.nav-items ul{
+    display: flex;
+}
+.nav-items ul li{
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+    font-size: 20px;
+}
+.res-card{
+    width: 200px;
+    height: 300px; 
+    border: 1px solid black;
+}
+.res-logo{
+    width: 200px;
 }

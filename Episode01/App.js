@@ -6,11 +6,11 @@
 //     "Namaste React"
 // );
 
-// //ye ek DOM root banayega react ke liye ki kaha pe store karna hai heading ko , basically HTML ke id tk le jayega
+// ye ek DOM root banayega react ke liye ki kaha pe store karna hai heading ko , basically HTML ke id tk le jayega
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// // ye render karega const heading ko
+//  ye render karega heading ko
 
 // root.render(heading);
 
