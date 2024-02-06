@@ -8,6 +8,8 @@
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.3);
+    background: #00000000;
+    
 }
 
 .logo{
@@ -25,8 +27,8 @@
 
 .location p{
     margin-top: 30px;
-    font-size: 17px;
-    margin-left: -100px;
+    font-size: 15px;
+    margin-left: -200px;
 }
 
 .nav-items ul{
@@ -40,7 +42,7 @@
     padding: 10px;
     margin: 0px 15px;
     list-style: none;
-    font-size: 20px;   
+    font-size: 17px;   
 }
 .nav-items ul li i{
     color: black;
@@ -50,14 +52,48 @@
     font-size: 17px;   
 }
 
+.body{
+    background: rgb(255, 255, 255);
+    margin: 0px 60px;
+}
+
 
 
 .res-tital{
-    margin: 50px 50px 0px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px 0px 0px;
     font-size: 23px;
 }
+
+
+.filter-btn {
+    font-size: 15px;
+    display: grid;
+    place-items: center;
+    background: #f1f6fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+	      -6px -6px 10px -1px rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.filter-btn:hover{
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+	      inset -4px -4px 6px -1px rgba(255, 255, 255, 0.856),
+	      -0.5px -0.5px 0px rgba(255,255,255,1),
+	      0.5px 0.5px 0px rgba(0,0,0,0.15),
+	      0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: translateY(0.5em);
+}
+
 .res-container{
-    margin: 20px 50px 50px 50px;
+    margin: 20px 0px 20px 0px;
     display: flex;
     flex-wrap: wrap;
     
@@ -66,23 +102,51 @@
 .res-card{
     width: 250px;
     /* height: 320px;  */
-    margin: 20px 20px 40px 20px;
-    border-radius: 15px;
+    margin: 20px 15px 40px 15px;
+    
     overflow: hidden;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-
-.res-card h3{
-    font-size: 18px;
-    padding: 5px;
-}
-
-.res-card h4{
-    font-size: 15px;
-    padding: 5px;
-    font-weight: 400;
+    
 }
 
 .res-logo{
     width: 100%;
+    border-radius: 15px;
+}
+
+.res-card h3{
+    font-size: 20px;
+    padding: 8px;
+    color: rgba(2, 6, 12, 0.75);
+}
+
+.res-card h4{
+    font-size: 18px;
+    padding: 5px;
+    font-weight: 600;
+    color: rgba(2, 6, 12, 0.75);
+}
+
+.res-card h5{
+    font-size: 15px;
+    padding: 5px;
+    font-weight: 500;
+    color: rgba(2, 6, 12, 0.6);
+}
+
+.res-card h6{
+    font-size: 15px;
+    padding: 5px;
+    font-weight: 500;
+    color: rgba(2, 6, 12, 0.6);
+    margin-bottom: 5px;
+}
+
+
+.res-card i{
+    color: green;
+}
+#circle{
+    color: black;
+    font-size: 5px;
+    margin: 0px 7px;
 }
