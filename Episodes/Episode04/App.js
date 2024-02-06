@@ -2060,6 +2060,7 @@ const Body = () => {
             
             <div className="res-container">
             
+            {/* passing props to the component */}
             {
                 resList.map((info) => <RestaurantCard resData={info}/>)
             }
