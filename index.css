@@ -43,9 +43,11 @@
     margin: 0px 5px;
     list-style: none;
     font-size: 17px;   
+    font-weight: 500;
 }
 .nav-items ul li i{
-    color: black;
+    /* color: black; */
+    color:#fa6c4d;
     padding: 8px;
     margin: 0px 0px;
     list-style: none;
@@ -75,6 +77,7 @@
 .body{
     background: rgb(255, 255, 255);
     margin: 0px 60px;
+    
 }
 
 
@@ -86,7 +89,40 @@
     margin: 50px 0px 0px 20px;
     font-size: 23px;
 }
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-box {
+  padding: 10px 10px;
+  margin-right: 5px;
+  background: #ddd;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
 
+.search-btn {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #f98745, #fa6c4d);
+    border-radius: 6px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+            -6px -6px 10px -1px rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,0,0,0);
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    margin: 0px;
+    font-size: 17px;
+    transition: box-shadow .2s;
+  }
+  
+.search-btn:hover {
+    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  }
 
 .filter-btn {
     margin-right: 20px;

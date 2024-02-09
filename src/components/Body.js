@@ -16,6 +16,13 @@ const Body = () => {
 
     // calling useState Hook
     const [listOfRestaurants, setListOfRestaurant] = useState(resList);
+    // yaha main khud se logic laga rha hu ki jb click kru to top rated restautent dikhe aur jb dobara click kru to top rated restaurant dikhe
+    const [ogList, setOgList] = useState("Click here to see top rated restaurants.");
+    // akshay saini sir search button banana sikha rhe
+    const [searchText, setSearchText] = useState("");
+
+
+
 
     // now we will use useEffect hook
     useEffect( () => {
@@ -58,26 +65,56 @@ const Body = () => {
         <div className="body">
             
             <div className="res-tital">
-            <h2>Top restaurant chains in Bangalore</h2>
+            <h2>Top restaurant chains in City</h2>
+
+
+            <div className="search">
+                <input type="text" placeholder="Search.." className="search-box" 
+                value={searchText} 
+                onChange={(e)=>{
+                    setSearchText(e.target.value);
+                    }} ></input>
+                   
+                <button className="search-btn"
+                onClick={() => {
+                    console.log(searchText);
+                    
+                    const filterdRestaurant = listOfRestaurants.filter((res)=> restaurant.info.name ===searchText
+                    );
+                }}>
+                    Search
+                    </button>
+            </div>
 
             <div className="filter">
                 <button className="filter-btn" 
                 // writing logic for filtering data 
                 onClick={()=>{
+                    ogList === "Click here to see top rated restaurants." ?
+                    setOgList("Click here to see all restaurants.") :
+                    setOgList("Click here to see top rated restaurants.")
+
+
+                    if(ogList === "Click here to see top rated restaurants."){
+
                     const filterdList = listOfRestaurants.filter(
                         (resList) => resList.info.avgRating >= 4
                     );
                     // us filterd data ko useState ki madad se update kr rhe hain 
                     setListOfRestaurant(filterdList);
+                    }else{
+                        setListOfRestaurant(resList);
+                    }
+                    
                 }}>
-                    Click here to see top rated restaurants.
+                    {ogList}
                 </button>
             </div>  
             </div>
      
             <div className="res-container">      
             {/* yaha pe list of restauratnts se map karwana hai */}
-            {listOfRestaurants.map((restaurent) => <RestaurantCard key={restaurent.info.id}   resData={restaurent}/>)
+            {listOfRestaurants.map((restaurant) => <RestaurantCard key={restaurant.info.id}   resData={restaurant}/>)
             }
             </div>
             
