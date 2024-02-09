@@ -1,10 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 //importing useState hook from react
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import resList from "../utils/mockData";
-
-// yaha pe shimmer ko bhi import karna padega
-// import Shimmer from "./Shimmer";
 
 
 const Body = () => {
@@ -16,43 +13,6 @@ const Body = () => {
 
     // calling useState Hook
     const [listOfRestaurants, setListOfRestaurant] = useState(resList);
-
-    // now we will use useEffect hook
-    useEffect( () => {
-        fetchData();
-    }, []);
-
-    //fetching the data from swiggy's API and resolving the promise using async await and converting it into json format
-    const fetchData = async () => {
-        const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-        );
-
-        const json = await data.json();
-
-        console.log(json);
-
-        // after getting the data in json form, we will update our state variable jo ki setListOfRestaurant hai use update karennge
-        // setListOfRestaurant(json.data.cards[2].data.data.cards); 
-        // but this is not good way
-
-        // here comes the concept of optional chaining
-        // read about optional chaining
-        // setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-
-    };
-
-
-
-    // jab tak hamara page rerender ho rha hai tb tk hm yaha pe ek logic likhenge taki jb tk page load ho tb tk shimmer UI load ho
-    // this concept is known as conditional rendering
-
-    // if(listOfRestaurants.length===0){
-    //     return<Shimmer/>;
-    // }
-
-    // we can also use ternary operator to handle this thing
-    // return listOfRestaurants.length === 0 ? < Shimmer /> : ( render body) 
 
     return(
         <div className="body">
