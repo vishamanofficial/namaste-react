@@ -8,7 +8,6 @@ import resList from "../utils/mockData";
 
 
 const Body = () => {
-
     //rules of hooks
     // 1 hooks can only be called inside react functional component
     // 2 hooks can only be called at the top level of a component
@@ -22,8 +21,6 @@ const Body = () => {
     const [ogList, setOgList] = useState("Click here to see top rated restaurants.");
     // akshay saini sir search button banana sikha rhe
     const [searchText, setSearchText] = useState("");
-
-
 
 
     // now we will use useEffect hook
@@ -41,13 +38,13 @@ const Body = () => {
 
     //     console.log(json);
 
-    //     // after getting the data in json form, we will update our state variable jo ki setListOfRestaurant hai use update karennge
-    //     // setListOfRestaurant(json.data.cards[2].data.data.cards); 
-    //     // but this is not good way
+        // after getting the data in json form, we will update our state variable jo ki setListOfRestaurant hai use update karennge
+        // setListOfRestaurant(json.data.cards[2].data.data.cards); 
+        // but this is not good way
 
-    //     // here comes the concept of optional chaining
-    //     // read about optional chaining
-    //     // setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // here comes the concept of optional chaining
+        // read about optional chaining
+        // setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     // };
 
@@ -67,7 +64,7 @@ const Body = () => {
         <div className="body">
             
             <div className="res-tital">
-            <h2>Top restaurant chains in City</h2>
+            <h2>Top Restaurant Chains in City</h2>
 
             <div className="search">
                 <input type="text" placeholder="Search.." className="search-box" 

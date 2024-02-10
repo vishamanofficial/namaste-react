@@ -1,9 +1,18 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 const Header = () => {
     // hm yaha pe useState ka use krke login logout button bana rahe hain 
     const [btnNameReact, setBtnNameReact] = useState("Login");
+
+    // if no dependency array is present then then useEffect is called on every render
+    // if empty dependency array is present then useEffect is called only on initial render (just once)
+    // is something present in depencey array as a dependency then useEffect is called everytime that dependency is updated
+
+    // useEffect( ()=>{
+    //     console.log("useEffect callled");
+    // }, [btnNameReact]);
+
 
     return(
         <div className="header">
