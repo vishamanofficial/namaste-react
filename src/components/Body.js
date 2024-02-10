@@ -11,7 +11,7 @@ const Body = () => {
     //rules of hooks
     // 1 hooks can only be called inside react functional component
     // 2 hooks can only be called at the top level of a component
-    // 3 hooks can not be conditional
+    // 3 hooks can not be called inside conditional or loop or function
 
     // calling useState Hook
     const [listOfRestaurants, setListOfRestaurant] = useState(resList);
