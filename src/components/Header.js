@@ -1,5 +1,6 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState , useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     // hm yaha pe useState ka use krke login logout button bana rahe hain 
@@ -24,10 +25,22 @@ const Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
-                    <li><i class="fa-solid fa-magnifying-glass"></i> Search</li>
-                    <li><i class="fa-brands fa-ideal"></i> Offers</li>
-                    <li><i class="fa-solid fa-handshake-angle"></i> Help</li>
-                    <li><i class="fa-solid fa-person-dots-from-line"></i> Takeaway</li>
+                    
+                    {/* <li><i class="fa-solid fa-magnifying-glass"></i> Search</li> */}
+                    <li>
+                        <Link to="/">
+                        <i class="fa-brands fa-ideal"></i> Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about">
+                        <i class="fa-brands fa-ideal"></i> About
+                        </Link>
+                    </li>
+                    
+                    <li>
+                        <Link to="/contact"><i class="fa-solid fa-handshake-angle"></i> Contact Us</Link></li>
+                    {/* <li><i class="fa-solid fa-person-dots-from-line"></i> Takeaway</li> */}
                     <li><i class="fa-solid fa-cart-shopping"></i> Cart</li>
                     {/* login logout buuton */}
                     <button 
