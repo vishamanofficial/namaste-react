@@ -1,4 +1,4 @@
-//ye sbse phle ek heading banayega aur fir usme Namaste react ko daal dega , React.createElement me 3 value paas hoti hai, pahla Tag ya element, doosra object jisme element ke liye id classes aur aurbhi aisi chezen paas hoti hain, aur teesre me jo us tag ya element me dalna hai wo
+// ye sbse phle ek heading banayega aur fir usme Namaste react ko daal dega , React.createElement me 3 value paas hoti hai, pahla Tag ya element, doosra object jisme element ke liye id classes aur aurbhi aisi chezen paas hoti hain, aur teesre me jo us tag ya element me dalna hai wo
 
 // const heading = React.createElement(
 //     "h1",
@@ -10,13 +10,13 @@
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 
-//  ye render karega heading ko
+// ye render karega heading ko
 
 // root.render(heading);
 
 
 
-// --------------------------------------------------------------------
+// -------------------------------------------------------------------
 
 
 
@@ -116,6 +116,3 @@ root.render(parent);
 // ye kitna messi ho ggya hai naaa , iske liye JSX hai jo ki hm agle episode me padhenge      for now stick to this   , JSX bs kaam aasaan krta hai but uska core yhi javascript hi hai
 
 // -------------------------------------------------
-
-
-

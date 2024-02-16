@@ -2,8 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-
-//ye sbse phle ek heading banayega aur fir usme Namaste react ko daal dega , React.createElement me 3 value paas hoti hai, pahla Tag ya element, doosra object jisme element ke liye id classes aur aurbhi aisi chezen paas hoti hain, aur teesre me jo us tag ya element me dalna hai wo
+// ye sbse phle ek heading banayega aur fir usme Namaste react ko daal dega , React.createElement me 3 value paas hoti hai, pahla Tag ya element, doosra object jisme element ke liye id classes aur aurbhi aisi chezen paas hoti hain, aur teesre me jo us tag ya element me dalna hai wo
 
 // const heading = React.createElement(
 //     "h1",
@@ -22,6 +21,7 @@ import ReactDOM from "react-dom/client";
 
 
 // --------------------------------------------------------------------
+
 
 
 // const para = React.createElement(

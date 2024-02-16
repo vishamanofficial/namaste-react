@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 
-
 const Header = () => {
     return(
         <div className="header">
@@ -26,7 +25,6 @@ const Header = () => {
 };
 
 
-
 const RestaurantCard = (props) => {
     const {resData} = props;
     return(
@@ -39,7 +37,6 @@ const RestaurantCard = (props) => {
         </div>
     )
 };
-
 
 
 const resList = [
@@ -2047,8 +2044,7 @@ const resList = [
         },
         "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
       }
-  ]
-    
+]
 
 
 const Body = () => {
@@ -2057,10 +2053,8 @@ const Body = () => {
             <div className="res-tital">
             <h2>Top restaurant chains in Bangalore</h2>
             </div>
-            
+ 
             <div className="res-container">
-            
-            {/* passing props to the component */}
             {
                 resList.map((info) => <RestaurantCard resData={info}/>)
             }
@@ -2071,19 +2065,16 @@ const Body = () => {
 };
 
 
-
 const AppLayout = () => {
     return(
         <div className="app">
             <Header/>
             <Body/>
-
         </div>
     )
 };
 
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(< AppLayout/>);
+root.render(<AppLayout/>);
