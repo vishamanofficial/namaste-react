@@ -1,7 +1,8 @@
+import { json } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 //importing useState hook from react
 import { useEffect, useState } from "react";
-import resList from "../utils/mockData";
+// import resList from "../utils/mockData";
 
 // yaha pe shimmer ko bhi import karna padega
 // import Shimmer from "./Shimmer";
@@ -14,7 +15,7 @@ const Body = () => {
     // 3 hooks can not be called inside conditional or loop or function
 
     // calling useState Hook
-    const [listOfRestaurants, setListOfRestaurant] = useState(resList);
+    const [listOfRestaurants, setListOfRestaurant] = useState([]);
     // serach box ke liye ye backchodi ho rhi
     // const [filterdRestaurant, setFilterdRestaurant] = useState(resList);
     // yaha main khud se logic laga rha hu ki jb click kru to top rated restautent dikhe aur jb dobara click kru to top rated restaurant dikhe
@@ -24,19 +25,19 @@ const Body = () => {
 
 
     // now we will use useEffect hook
-    // useEffect( () => {
-    //     fetchData();
-    // }, []);
+    useEffect( () => {
+        fetchData();
+    }, []);
 
     //fetching the data from swiggy's API and resolving the promise using async await and converting it into json format
-    // const fetchData = async () => {
-    //     const data = await fetch(
-    //         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    //     );
+    const fetchData = async () => {
+        const data = await fetch(
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        );
 
-    //     const json = await data.json();
+        const json = await data.json();
 
-    //     console.log(json);
+        console.log(json);
 
         // after getting the data in json form, we will update our state variable jo ki setListOfRestaurant hai use update karennge
         // setListOfRestaurant(json.data.cards[2].data.data.cards); 
@@ -44,9 +45,9 @@ const Body = () => {
 
         // here comes the concept of optional chaining
         // read about optional chaining
-        // setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-    // };
+    };
 
 
 
@@ -87,8 +88,7 @@ const Body = () => {
             </div>
 
             <div className="filter">
-                <button className="filter-btn" 
-                // writing logic for filtering data 
+                <button className="filter-btn"  
                 onClick={()=>{
                     ogList === "Click here to see top rated restaurants." ?
                     setOgList("Click here to see all restaurants.") :
@@ -96,13 +96,15 @@ const Body = () => {
 
                     if(ogList === "Click here to see top rated restaurants."){
 
-                    const filterdList = listOfRestaurants.filter(
-                        (resList) => resList.info.avgRating >= 4
+                     const filterdList = listOfRestaurants.filter(
+                        (json) => json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.avgRating >= 4 
                     );
                     // us filterd data ko useState ki madad se update kr rhe hain 
                     setListOfRestaurant(filterdList);
-                    }else{
-                        setListOfRestaurant(resList);
+                    }
+                    else
+                    {
+                        setListOfRestaurant(json);
                     }                    
                 }}>
                     {ogList}
@@ -111,8 +113,7 @@ const Body = () => {
             </div>
      
             <div className="res-container">      
-            {/* yaha pe list of restauratnts se map karwana hai */}
-            {listOfRestaurants.map((restaurant) => <RestaurantCard key={restaurant.info.id}   resData={restaurant}/>)
+            {listOfRestaurants?.map((restaurant) => <RestaurantCard key={restaurant.info.id}   resData={restaurant}/>)
             }
             </div>
             

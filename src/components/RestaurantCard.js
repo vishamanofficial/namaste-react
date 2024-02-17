@@ -1,29 +1,32 @@
 // named export will be imported using {}    
 import { CDN_URL } from "../utils/constants";
+import resList from "../utils/mockData";
 
 const RestaurantCard = (props) => {
     const {resData} = props;
 
-    // const{
-    //     name,
-    //     locality,
-    //     costForTwo,
-    //     cuisines
-    // } = resData?.data;
+    const{
+        cloudinaryImageId,
+        name,
+        avgRating,
+        deliveryTime,
+        cuisines,
+        locality,
+    } = resData?.info;
 
     return(
         <div className="res-card">
-            <img className="res-logo" src={CDN_URL + resData.info.cloudinaryImageId} />
+            <img className="res-logo" src={CDN_URL + cloudinaryImageId} />
 
-            <h3>{resData.info.name}</h3>
+            <h3>{name}</h3>
 
-            <h4><i class="fa-solid fa-star"></i> {resData.info.avgRating} 
+            <h4><i class="fa-solid fa-star"></i> {avgRating} 
             <i id="circle" class="fa-solid fa-circle"></i> 
-            {resData.info.sla.deliveryTime + " minutes"}</h4>
+            {deliveryTime + " minutes"}</h4>
 
-            <h5>{resData.info.cuisines.join(", ")}</h5>
+            <h5>{cuisines.join(", ")}</h5>
             
-            <h6>{resData.info.locality}</h6>
+            <h6>{locality}</h6>
             
             
         </div>
