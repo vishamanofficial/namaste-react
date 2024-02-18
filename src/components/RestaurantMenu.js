@@ -16,6 +16,7 @@ const RestaurantMenu = () => {
         setResInfo(json.data);
     };
    
+    //isiline se error dikha rha hai 
     const { name } = resInfo?.cards[0]?.card?.card?.info;
 
 
