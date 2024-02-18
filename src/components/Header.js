@@ -21,7 +21,7 @@ const Header = () => {
                 <img className="logo" src= {LOGO_URL} />
             </div>
             <div className="location">
-                <p>Bengaluru, Karnataka 560034, India</p>
+                <p>Koramangala, Bengaluru, Karnataka, India</p>
             </div>
             <div className="nav-items">
                 <ul>

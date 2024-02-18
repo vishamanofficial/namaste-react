@@ -17,7 +17,7 @@ const Body = () => {
     // calling useState Hook
     const [listOfRestaurants, setListOfRestaurant] = useState([]);
     // serach box ke liye ye backchodi ho rhi
-    // const [filterdRestaurant, setFilterdRestaurant] = useState(resList);
+    const [filterdRestaurant, setFilterdRestaurant] = useState([]);
     // yaha main khud se logic laga rha hu ki jb click kru to top rated restautent dikhe aur jb dobara click kru to top rated restaurant dikhe
     const [ogList, setOgList] = useState("Click here to see top rated restaurants.");
     // akshay saini sir search button banana sikha rhe
@@ -32,12 +32,13 @@ const Body = () => {
     //fetching the data from swiggy's API and resolving the promise using async await and converting it into json format
     const fetchData = async () => {
         const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            "https://corsproxy.org/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            
         );
 
         const json = await data.json();
 
-        console.log(json);
+        // console.log(json);
 
         // after getting the data in json form, we will update our state variable jo ki setListOfRestaurant hai use update karennge
         // setListOfRestaurant(json.data.cards[2].data.data.cards); 
@@ -46,6 +47,8 @@ const Body = () => {
         // here comes the concept of optional chaining
         // read about optional chaining
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+        setFilterdRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     };
 
@@ -70,18 +73,17 @@ const Body = () => {
             <div className="search">
                 <input type="text" placeholder="Search.." className="search-box" 
                 value={searchText} 
+                
                 onChange={(e)=>{
                     setSearchText(e.target.value);
                     }} ></input>
                    
                 <button className="search-btn"
                 onClick={() => {
-                    console.log(searchText);
-
                     const filterdRestaurant = listOfRestaurants.filter(
                         (restaurant) => restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
                     ); 
-                    setListOfRestaurant(filterdRestaurant);
+                    setFilterdRestaurant(filterdRestaurant);
                 }}>
                     Search
                     </button>
@@ -97,14 +99,13 @@ const Body = () => {
                     if(ogList === "Click here to see top rated restaurants."){
 
                      const filterdList = listOfRestaurants.filter(
-                        (json) => json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.avgRating >= 4 
+                        (restaurant) => restaurant.info.avgRating >= 4.5
                     );
-                    // us filterd data ko useState ki madad se update kr rhe hain 
-                    setListOfRestaurant(filterdList);
+                    setFilterdRestaurant(filterdList);
                     }
                     else
                     {
-                        setListOfRestaurant(json);
+                        setFilterdRestaurant(listOfRestaurants);
                     }                    
                 }}>
                     {ogList}
@@ -113,7 +114,7 @@ const Body = () => {
             </div>
      
             <div className="res-container">      
-            {listOfRestaurants?.map((restaurant) => <RestaurantCard key={restaurant.info.id}   resData={restaurant}/>)
+            {filterdRestaurant?.map((restaurant) => <RestaurantCard key={restaurant.info.id}   resData={restaurant}/>)
             }
             </div>
             
