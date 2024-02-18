@@ -32,6 +32,7 @@ const Header = () => {
                         <i class="fa-brands fa-ideal"></i> Home
                         </Link>
                     </li>
+
                     <li>
                         <Link to="/about">
                         <i class="fa-brands fa-ideal"></i> About
@@ -39,12 +40,16 @@ const Header = () => {
                     </li>
                     
                     <li>
-                        <Link to="/contact"><i class="fa-solid fa-handshake-angle"></i> Contact Us</Link></li>
-                    {/* <li><i class="fa-solid fa-person-dots-from-line"></i> Takeaway</li> */}
+                        <Link to="/contact"><i class="fa-solid fa-handshake-angle"></i> Contact Us</Link>
+                    </li>
+
+                    <li><i class="fa-solid fa-person-dots-from-line"></i> Takeaway</li>
+
                     <li><i class="fa-solid fa-cart-shopping"></i> Cart</li>
+
                     {/* login logout buuton */}
                     <button 
-                        className="login" 
+                        className="login" z
                         onClick={() => { 
                             // logic for login logout toggle button 
                             btnNameReact === "Login" ?

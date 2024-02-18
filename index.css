@@ -38,13 +38,24 @@
 }
 
 .nav-items ul li{
-    color: black;
+    color: black !important;
+    text-decoration: none !important;
     padding: 10px;
     margin: 0px 5px;
     list-style: none;
     font-size: 17px;   
     font-weight: 500;
 }
+.nav-items ul li a{
+    color: black !important;
+    text-decoration: none !important;
+    padding: 10px;
+    margin: 0px 5px;
+    list-style: none;
+    font-size: 17px;   
+    font-weight: 500;
+}
+
 .nav-items ul li i{
     /* color: black; */
     color:#fa6c4d;
