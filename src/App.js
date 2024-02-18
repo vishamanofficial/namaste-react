@@ -6,8 +6,10 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 // createBrouserRouter me list routing condigurations likhnege , RouterProvider use render krne me help karega , Outlet use accodinglu route krwayega
 import { createBrowserRouter , RouterProvider , Outlet } from "react-router-dom";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 
 
@@ -29,23 +31,6 @@ const AppLayout = () => {
 // to developer routes, we have to create routing configurations
 // ab hm chahte hai ki hamara header waise ka waisa hi rhe bs uske neeche ka content chenge ho to iske liye hm applayout me children banayenge
 // configuration is a list. It is a information that what will happen on a specific path
-// const appRouter = createBrowserRouter([
-//     {
-//         path: "/", 
-//         element: <AppLayout/>,
-//         errorElement: <Error/>,
-//     },
-//     {
-//         path: "/about",
-//         element: <About />,
-//     },
-//     {
-//         path: "/contact",
-//         element: <Contact />,
-//     },
-// ]);
-
-
 const appRouter = createBrowserRouter([
     {
         path: "/",
@@ -63,10 +48,16 @@ const appRouter = createBrowserRouter([
                 path: "/contact",
                 element: <Contact />,
             },
+            {
+                path: "/restaurants/:resId",
+                element: <RestaurantMenu />,
+            },
         ],
         errorElement: <Error/>,
     }
 ]);
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

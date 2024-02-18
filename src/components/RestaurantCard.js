@@ -21,7 +21,9 @@ const RestaurantCard = (props) => {
             <h3>{name}</h3>
 
             <h4><i class="fa-solid fa-star"></i> {avgRating} 
+
             <i id="circle" class="fa-solid fa-circle"></i> 
+            
             {sla?.slaString}</h4>
 
             <h5>{cuisines.join(", ")}</h5>
