@@ -11,10 +11,19 @@ class UserClass extends React.Component {
             count:0,
             count2:1,
         };
+        console.log("constructor called");
 
     }
+
+    //used to make api call
+    componentDidMount(){
+        console.log("componentDidMount called");
+    }
+
     render() {
+        console.log("render called");
         return (
+            
             <div className="user-card">
                 <h1>Class Based Component</h1>
                 <h2>Name : {this.props.name}</h2>
@@ -29,8 +38,11 @@ class UserClass extends React.Component {
                     });
                 }}>Count Increase</button>
                 <h5>Count2 : {this.state.count2}</h5>
+                
             </div>
+            
         );
+        
     }
 }
 
